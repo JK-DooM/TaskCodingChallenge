@@ -1,4 +1,4 @@
-package com.task.cc.controller;
+/*package com.task.cc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -37,4 +37,4 @@ public class UserController {
     public User register(@RequestBody User user) {
         return userService.saveUser(user);
     }
-}
+}*/
