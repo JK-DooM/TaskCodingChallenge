@@ -9,7 +9,6 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -17,8 +16,8 @@ public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     
-    private int id;
     private String title;
     private String description;
     private String dueDate;
@@ -40,11 +39,11 @@ public class Task {
 		this.user = user;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -88,7 +87,7 @@ public class Task {
 		this.status = status;
 	}
 
-	public Task(int id, String title, String description, String dueDate, Priority priority, Status status) {
+	public Task(Integer id, String title, String description, String dueDate, Priority priority, Status status) {
 		super();
 		this.id = id;
 		this.title = title;

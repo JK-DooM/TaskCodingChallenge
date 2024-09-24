@@ -3,6 +3,7 @@ package com.task.cc.model;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,18 +15,18 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     
-    @OneToMany
-    private List<Task> tasks;
-  
-    private int id;
     private String username;
     private String password;
     
-	public int getId() {
+    @OneToMany
+    private List<Task> tasks;
+    
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getUsername() {
@@ -48,7 +49,7 @@ public class User {
 	      this.tasks = tasks;
 	}
 	
-	public User(int id, String username, String password) {
+	public User(Integer id, String username, String password) {
 		super();
 		this.id = id;
 		this.username = username;
